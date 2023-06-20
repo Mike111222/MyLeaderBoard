@@ -1,4 +1,4 @@
-# ToDoList
+# LeaderBoard
 <a name="readme-top"></a>
 
 <div align="center">
@@ -6,7 +6,7 @@
  
   <br/>
 
-  <h3><b>ToDo List</b></h3>
+  <h3><b>LeaderBoard App</b></h3>
 
 </div>
 
@@ -14,7 +14,7 @@
 
 # 📗 Table of Contents
 
-- [ToDoList](#todolist)
+- [LeaderBoard](#leaderboard)
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 \[ToDo List\] ](#-todo-list-)
   - [🛠 Built With ](#-built-with-)
@@ -25,7 +25,6 @@
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [To run the project](#to-run-the-project)
-    - [To run the test](#to-run-the-test)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -38,7 +37,7 @@
 
 # 📖 [ToDo List] <a name="about-project"></a>
 
-**[Here you can add your daily tasks list and check every task according to its completion. You can also remove and edit tasks. You can also clear all completed tasks after selecting them from the list. HTML/CSS and JavaScript best practices are used to make this project. Also used webpacks in this project. This project can be run on localhost.]**
+**[In Leaderboard, players and their respective scores can be added. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service. Refresh and Submit buttons are there to update the scores. Async & Await are also implemented along with some styling.]**
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -71,17 +70,13 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Displays List of ToDo Tasks]**
-- **[Addition of New Tasks]**
-- **[Removal of a Task from the list]**
+- **[Displays List of Players and Scores]**
+- **[Addition of New Players and Scores]**
+- **[Removal of all Players and Scores from the list]**
 - **[Local storage]**
-- **[Editing a task with Edit Button]**
-- **[Checkboxes are there to check the completed tasks]**
-- **[All the completed tasks can be Cleared by Clicking the Clear All Completed Button]**
-- **[A Reset button is also there to reset all the tasks.]**
+- **[A Reset button is also there to reset all the Players and Scores.]**
 - **[Webpack is managing all the dependencies and auto loading in browser]**
 - **[All the scetions and functionality is re-created by ES6 Modules]**
-- **[ToDo List is Interactive, checking and unchecking the checkbox is interactive.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -89,7 +84,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- <a href="https://mike111222.github.io/ToDoList/dist/">My ToDoList Project's Live Demo Link</a>
+- <a href="">Coming Soon</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -114,21 +109,14 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone git@github.com:Mike111222/ToDoList.git
+  git clone git@github.com:Mike111222/MyLeaderBoard.git
 ```
 
 ### To run the project
 
 Open index.html file in VS Code, run via live server extension and see how the code works. You can also visit the Live Demo Link to see how the Project works online.
 
-### To run the test
-Make sure you are in the project folder
 
-- [x] Make sure you have node.js installed
-- [x] npm installed 
-- [x] npm i -D jest
-- [x] change your your test script to jest (optional: --coverage)
-- [x] Run npm test
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 Use index.html file.
@@ -186,7 +174,7 @@ I would like to thank my fellow Authors, my friend, my code reviewers and Microv
 
 - **[How can the project be improved]**
 
-  - [More features can be intergrated by adding more pages for example pending tasks from the past]
+  - [More features can be intergrated by adding more pages]
 
 - **[Can I use this project for study purposes]**
 
