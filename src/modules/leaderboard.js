@@ -2,13 +2,13 @@
 
 // Function to get leaderboard data from local storage
 function getLeaderboardData() {
-  const storedData = localStorage.getItem("leaderboardData");
+  const storedData = localStorage.getItem('leaderboardData');
   return storedData ? JSON.parse(storedData) : [];
 }
 
 // Function to save leaderboard data to local storage
 function saveLeaderboardData(data) {
-  localStorage.setItem("leaderboardData", JSON.stringify(data));
+  localStorage.setItem('leaderboardData', JSON.stringify(data));
 }
 
 // Sample leaderboard data
@@ -16,16 +16,16 @@ let leaderboardData = getLeaderboardData();
 
 // Function to render the leaderboard
 export function renderLeaderboard() {
-  const leaderboardElement = document.getElementById("leaderboard");
-  leaderboardElement.innerHTML = "";
+  const leaderboardElement = document.getElementById('leaderboard');
+  leaderboardElement.innerHTML = '';
 
-  const table = document.createElement("table");
+  const table = document.createElement('table');
 
   leaderboardData.forEach((player) => {
-    const row = document.createElement("tr");
-    const nameCell = document.createElement("td");
+    const row = document.createElement('tr');
+    const nameCell = document.createElement('td');
     nameCell.textContent = player.name;
-    const scoreCell = document.createElement("td");
+    const scoreCell = document.createElement('td');
     scoreCell.textContent = player.score;
 
     row.appendChild(nameCell);
@@ -40,12 +40,11 @@ export function renderLeaderboard() {
 export function handleFormSubmit(event) {
   event.preventDefault();
 
-  const playerName = document.getElementById("playerName").value;
-  const playerScore = parseInt(document.getElementById("playerScore").value);
+  const playerName = document.getElementById('playerName').value;
+  const playerScore = parseInt(document.getElementById('playerScore').value, 10); // Added radix parameter
 
   // Validate input
-  if (!playerName || !playerScore) {
-    alert("Please enter a valid player name and score.");
+  if (!playerName || Number.isNaN(playerScore)) {
     return;
   }
 
@@ -62,7 +61,7 @@ export function handleFormSubmit(event) {
   saveLeaderboardData(leaderboardData);
 
   // Reset the form
-  document.getElementById("scoreForm").reset();
+  document.getElementById('scoreForm').reset();
 }
 
 // Function to handle refresh button click
@@ -76,10 +75,10 @@ function handleRefreshButtonClick() {
 }
 
 // Event listener for form submission
-document.getElementById("scoreForm").addEventListener("submit", handleFormSubmit);
+document.getElementById('scoreForm').addEventListener('submit', handleFormSubmit);
 
 // Event listener for refresh button click
-document.getElementById("refreshButton").addEventListener("click", handleRefreshButtonClick);
+document.getElementById('refreshButton').addEventListener('click', handleRefreshButtonClick);
 
 // Initial rendering of the leaderboard
 renderLeaderboard();
