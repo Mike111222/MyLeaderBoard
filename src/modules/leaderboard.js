@@ -1,96 +1,71 @@
-// Function to get leaderboard data from local storage
-function getLeaderboardData() {
-  const storedData = localStorage.getItem('leaderboardData');
-  return storedData ? JSON.parse(storedData) : [];
-}
-
-// Function to save leaderboard data to local storage
-function saveLeaderboardData(data) {
-  localStorage.setItem('leaderboardData', JSON.stringify(data));
-}
-
-// Sample placeholder data
-const placeholderData = [
-  { name: 'Name', score: 100 },
-  { name: 'Name', score: 200 },
-  { name: 'Name', score: 150 },
-  { name: 'Name', score: 300 },
-  { name: 'Name', score: 250 },
-  { name: 'Name', score: 350 },
-];
-
-// Sample leaderboard data
-let leaderboardData = getLeaderboardData();
-
-// Function to render the leaderboard
-export function renderLeaderboard() {
-  const leaderboardElement = document.getElementById('leaderboard');
-  leaderboardElement.innerHTML = '';
-
-  const table = document.createElement('table');
-
-  // Display the placeholder data if the leaderboard data is empty
-  const dataToDisplay = leaderboardData.length > 0 ? leaderboardData : placeholderData;
-
-  dataToDisplay.forEach((player) => {
-    const row = document.createElement('tr');
-    const nameCell = document.createElement('td');
-    nameCell.textContent = player.name;
-    const scoreCell = document.createElement('td');
-    scoreCell.textContent = player.score;
-
-    row.appendChild(nameCell);
-    row.appendChild(scoreCell);
-    table.appendChild(row);
-  });
-
-  leaderboardElement.appendChild(table);
-}
-
-// Function to handle form submission
-export function handleFormSubmit(event) {
-  event.preventDefault();
-
-  const playerName = document.getElementById('playerName').value;
-  const playerScore = parseInt(document.getElementById('playerScore').value, 10);
-
-  // Validate input
-  if (!playerName || Number.isNaN(playerScore)) {
-    alert('Please enter a valid player name and score.');
-    return;
+class GetGameScore {
+  constructor(user, score) {
+    this.user = user;
+    this.score = score;
   }
 
-  // Add the new player to the leaderboard
-  leaderboardData.push({ name: playerName, score: playerScore });
+  // stores data in array
+  scoresData = [];
 
-  // Sort the leaderboard based on score (descending order)
-  leaderboardData.sort((a, b) => b.score - a.score);
+  // API URL
+  apiURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/Ff2lEvzHFw6jYxy6okeP/scores/';
 
-  // Render the updated leaderboard
-  renderLeaderboard();
+  // Show Scores
+  showScores = () => {
+    // Get the 'list' element
+    const scoresList = document.getElementById('list');
 
-  // Save the updated leaderboard data to local storage
-  saveLeaderboardData(leaderboardData);
+    // Update the HTML content with scoresData
+    scoresList.innerHTML = this.scoresData.map((item) => `
+    <li>${item.user} : ${item.score}</li>`).join('');
+  };
 
-  // Reset the form
-  document.getElementById('scoreForm').reset();
+  // fetching data from API
+  fetchScores = async () => {
+    try {
+      // Fetch data from the API
+      const data = await fetch(this.apiURL);
+      const response = await data.json();
+
+      // Clear existing scoresData array
+      this.scoresData = [];
+
+      // Map through the response and add each item to scoresData array
+      response.result.map((item) => this.scoresData.push(item));
+
+      // Call showScores to update the displayed scores
+      return this.showScores();
+    } catch (error) {
+      return error;
+    }
+  };
+
+  // Add a new Score
+  addNewScore = async ({ user, score }) => {
+    try {
+      // Create a config object with method, headers, and body
+      const config = {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ user, score }),
+      };
+
+      // Send a POST request to the API with the provided data
+      const data = await fetch(this.apiURL, config);
+      const response = await data.json();
+
+      // Add the response to scoresData array
+      this.scoresData.push(response);
+
+      // Fetch and update the scores after adding a new score
+      return this.fetchScores();
+    } catch (error) {
+      return error;
+    }
+  };
 }
 
-// Function to handle refresh button click
-function handleRefreshButtonClick() {
-  // Clear the leaderboard data
-  leaderboardData = [];
-  saveLeaderboardData(leaderboardData);
-
-  // Render the empty leaderboard
-  renderLeaderboard();
-}
-
-// Event listener for form submission
-document.getElementById('scoreForm').addEventListener('submit', handleFormSubmit);
-
-// Event listener for refresh button click
-document.getElementById('refreshButton').addEventListener('click', handleRefreshButtonClick);
-
-// Initial rendering of the leaderboard
-renderLeaderboard();
+export default GetGameScore;
