@@ -20,10 +20,13 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [� Getting Started ](#-getting-started-)
+  - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
-    - [To run the project](#to-run-the-project)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+    - [Deployment ](#deployment-)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -45,23 +48,27 @@
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://html.com/">HTML</a></li>
-    <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS</a></li>
-    <li><a href="https://www.javascript.com/">JavaScript</a></li>    
+    <li><a href="#">HTML, CSS, JavaScript, Webpack, API</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="#">N/A</a></li>
+    <li><a href="https://localhost:8080/">Dev Server</a></li>
   </ul>
 </details>
 
 <details>
-<summary>Database</summary>
+  <summary>Pakage Manager</summary>
   <ul>
-    <li><a href="#">N/A</a></li>
+    <li><a href="#">NPM</a></li>
+  </ul>
+</details>
+<details>
+  <summary>API</summary>
+  <ul>
+    <li><a href="#">Post Master</a></li>
   </ul>
 </details>
 
@@ -88,34 +95,76 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-- Install VS Code and run it on Live Server if you want to check how the code works on local host. 
+
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-1. Browser.
-2. VS Code editor
-3. Git and GitHub
-4. Webpack Setup
+- A web browser to view output e.g [Google Chrome](https://www.google.com/chrome/).
+- An IDE e.g [Visual studio code](https://code.visualstudio.com/).
+- `node` should be installed in your local machine, [node website](https://nodejs.org/en/download/).
+- Install the `npm` package manager use this [to install both node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+- [A terminal](https://code.visualstudio.com/docs/terminal/basics).
 
 ### Setup
 
-Clone this repository to your desired folder:
+Clone this repository to your desired folder or download the Zip folder:
 
-```sh
-  cd my-folder
-  git clone git@github.com:Mike111222/MyLeaderBoard.git
+```
+https://github.com/Mike111222/MyLeaderBoard
 ```
 
-### To run the project
+- Navigate to the location of the folder in your machine:
 
-Open index.html file in VS Code, run via live server extension and see how the code works. You can also visit the Live Demo Link to see how the Project works online.
+**``you@your-Pc-name:~$ cd MyLeaderBoard``**
 
+### Install
 
+To install all dependencies, run:
+
+```
+npm install
+```
+
+### Usage
+
+To run the project, follow these instructions:
+
+- After Cloning this repo to your local machine.
+- Open the `index.html` in your browser.
+- You can also use `npm start` command in terminal to run this at localhost:8080
+
+### Run tests
+
+To run tests, run the following command:
+
+- Track HTML linter errors run:
+```
+npx hint .
+```
+- Track CSS linter errors run:
+```
+npx stylelint "**/*.{css,scss}"
+```
+- Track JavaScript linter errors run:
+```
+npx eslint .
+```
+- run test:
+```
+npm test 
+```
+
+### Deployment <a name="deployment"></a>
+
+You can deploy this project using: GitHub Pages,
+- I used GitHub Pages to deploy my website.
+- For more information about publishing sources, see "[About GitHub pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites)".
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-Use index.html file.
+
 
 <!-- AUTHORS -->
 
@@ -133,7 +182,7 @@ Use index.html file.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Navigation bar]**
+- [ ] **[More styles will be added to make my project look more beautiful and apealing.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -185,3 +234,12 @@ I would like to thank my fellow Authors, my friend, my code reviewers and Microv
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+
+
+
+
+
