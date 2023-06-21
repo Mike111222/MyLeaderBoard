@@ -1,0 +1,13 @@
+ const getId = async () => {
+ const res = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
+   method: 'POST',
+   headers: {
+    'content-type': 'application/json;charset=utf-8',
+   },
+   body: JSON.stringify({ name: 'My cool new game' }),
+ });
+ const json = await res.json();
+ console.log(json);
+};
+
+{ result: 'Game with ID: Ff2lEvzHFw6jYxy6okeP added.' }
