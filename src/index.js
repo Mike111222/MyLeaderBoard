@@ -1,9 +1,17 @@
 import './styles.css';
+import GetGameScore from './modules/leaderboard.js';
 
-import { renderLeaderboard, handleFormSubmit } from './modules/leaderboard.js';
+const currentScore = new GetGameScore();
+const addScore = document.querySelector('.add-form');
 
-// Attach form submit event listener
-document.getElementById('scoreForm').addEventListener('submit', handleFormSubmit);
+addScore.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const user = addScore.name.value;
+  const score = addScore.score.value;
+  currentScore.addNewScore({ user, score });
+  addScore.reset();
+});
 
-// Initial rendering of the leaderboard
-renderLeaderboard();
+const refreshBtn = document.getElementById('refresh');
+refreshBtn.addEventListener('click', currentScore.fetchScores);
+document.addEventListener('DOMContentLoaded', currentScore.showScores);
