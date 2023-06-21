@@ -1,5 +1,3 @@
-// leaderboard.js
-
 // Function to get leaderboard data from local storage
 function getLeaderboardData() {
   const storedData = localStorage.getItem('leaderboardData');
@@ -11,6 +9,16 @@ function saveLeaderboardData(data) {
   localStorage.setItem('leaderboardData', JSON.stringify(data));
 }
 
+// Sample placeholder data
+const placeholderData = [
+  { name: 'Name', score: 100 },
+  { name: 'Name', score: 200 },
+  { name: 'Name', score: 150 },
+  { name: 'Name', score: 300 },
+  { name: 'Name', score: 250 },
+  { name: 'Name', score: 350 },
+];
+
 // Sample leaderboard data
 let leaderboardData = getLeaderboardData();
 
@@ -21,7 +29,10 @@ export function renderLeaderboard() {
 
   const table = document.createElement('table');
 
-  leaderboardData.forEach((player) => {
+  // Display the placeholder data if the leaderboard data is empty
+  const dataToDisplay = leaderboardData.length > 0 ? leaderboardData : placeholderData;
+
+  dataToDisplay.forEach((player) => {
     const row = document.createElement('tr');
     const nameCell = document.createElement('td');
     nameCell.textContent = player.name;
@@ -41,10 +52,11 @@ export function handleFormSubmit(event) {
   event.preventDefault();
 
   const playerName = document.getElementById('playerName').value;
-  const playerScore = parseInt(document.getElementById('playerScore').value, 10); // Added radix parameter
+  const playerScore = parseInt(document.getElementById('playerScore').value, 10);
 
   // Validate input
   if (!playerName || Number.isNaN(playerScore)) {
+    alert('Please enter a valid player name and score.');
     return;
   }
 
