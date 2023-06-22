@@ -20,6 +20,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -79,14 +80,21 @@
 - **[Displays List of Players and Scores]**
 - **[Addition of New Players and Scores]**
 - **[Removal of all Players and Scores from the list]**
-- **[Local storage]**
-- **[A Reset button is also there to reset all the Players and Scores.]**
+- **[Leaderboard API is responsible for storage and retrieval of Data]**
+- **[A Refresh button is there to fetch all the Players and Scores using API.]**
 - **[Webpack is managing all the dependencies and auto loading in browser]**
 - **[All the scetions and functionality is re-created by ES6 Modules]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
+
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+
+- [Live Demo Link of MyLeaderBoard](https://mike111222.github.io/MyLeaderBoard/dist/)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -234,12 +242,4 @@ I would like to thank my fellow Authors, my friend, my code reviewers and Microv
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-
-
-
-
-
 
