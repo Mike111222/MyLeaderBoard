@@ -6,14 +6,62 @@
 }
 
 body {
-  background-color: skyblue;
+  background-image: url(/img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-h1 {
-  font-size: 2rem;
-  color: #fff;
-  font-family: "Roboto", cursive;
+.main-heading {
+  font-size: calc(20px + 8vh);
+  line-height: calc(20px + 20vh);
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #f00, 0 0 10px #ff8d00, 0 0 98px #f00;
+  color: #fff6a9;
+  font-family: "Sacramento", cursive;
   text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+
+@-webkit-keyframes blink {
+  20%,
+  25%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  27%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #f00, 0 0 10px #ff8d00, 0 0 98px #f00;
+    color: #fff6a9;
+  }
+}
+
+@keyframes blink {
+  20%,
+  25%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  27%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #f00, 0 0 10px #ff8d00, 0 0 98px #f00;
+    color: #fff6a9;
+  }
 }
 
 .container {
@@ -45,6 +93,7 @@ h1 {
   color: #fff;
   cursor: pointer;
   display: inline-block;
+  font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
   height: 40px;
   line-height: 40px;
   outline: 0;
@@ -71,6 +120,15 @@ h1 {
 h2 {
   font-size: 1.8rem;
   color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
 }
 
 .recentScoreList {
@@ -85,8 +143,9 @@ div ul li {
   margin: 0 10px;
   font-style: italic;
   text-transform: uppercase;
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #f00, 0 0 10px #ff8d00, 0 0 98px #f00;
   color: #fff6a9;
-  font-family: "Roboto", cursive;
+  font-family: "Sacramento", cursive;
   text-align: center;
 }
 
@@ -145,4 +204,23 @@ div ul li:nth-child(even) {
   z-index: 9;
   border: 0;
   transition: box-shadow 0.2s;
+}
+
+@media only screen and (max-width: 769px) {
+  body {
+    height: 100vh;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .container {
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .add-form {
+    width: 80%;
+  }
 }
