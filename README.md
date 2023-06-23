@@ -242,4 +242,3 @@ I would like to thank my fellow Authors, my friend, my code reviewers and Microv
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
