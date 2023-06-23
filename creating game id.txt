@@ -11,3 +11,5 @@
 };
 
 { result: 'Game with ID: Ff2lEvzHFw6jYxy6okeP added.' }
+{ result: 'Game with ID: l2YirsKtAvsXL3kzMMvw added.' }
+{ result: 'Game with ID: 6Zvc4fYrm4fp0SPaIEde added.' }
